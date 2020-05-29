@@ -168,5 +168,3 @@ def callback_inline(call):
         print(repr(e))
  
 bot.polling(none_stop=True)
-
-аоашоуащоуаощшоаущшцуоащшцоущацощаоцщаоцщаощцоуа
