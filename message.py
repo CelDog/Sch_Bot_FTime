@@ -29,7 +29,7 @@ def adminactive(message):
 def an(message):
     if message.chat.type == 'private':
  
-        if message.text == 'Расписание уроков.' or 'Вывести содержимое файлов':
+        if message.text == 'Расписание уроков.':
 
         
             markup = types.InlineKeyboardMarkup(row_width=1)
@@ -77,6 +77,37 @@ def an(message):
         
         elif message.text == 'Подсказка':
             bot.send_message(message.chat.id, "Вывести содержимое файлов, Режим редактирования")
+        
+        elif message.text == 'Режим редактирования':
+            markup = types.InlineKeyboardMarkup(row_width=1)
+            item1 = types.InlineKeyboardButton("1-А", callback_data='1-А(w)')
+            item2 = types.InlineKeyboardButton("1-Б", callback_data='1-Б(w)')
+            item3 = types.InlineKeyboardButton("2-А", callback_data='2-А(w)')
+            item4 = types.InlineKeyboardButton("2-Б", callback_data='2-Б(w)')
+            item5 = types.InlineKeyboardButton("3-А", callback_data='3-А(w)')
+            item6 = types.InlineKeyboardButton("3-Б", callback_data='3-Б(w)')
+            item7 = types.InlineKeyboardButton("4-А", callback_data='4-А(w)')
+            item8 = types.InlineKeyboardButton("4-Б", callback_data='4-Б(w)')
+            item9 = types.InlineKeyboardButton("5-А", callback_data='5-А(w)')
+            item10 = types.InlineKeyboardButton("5-Б", callback_data='5-Б(w)')
+            item11 = types.InlineKeyboardButton("6-А", callback_data='6-А(w)')
+            item12 = types.InlineKeyboardButton("6-Б", callback_data='6-Б(w)')
+            item13 = types.InlineKeyboardButton("7-А", callback_data='7-А(w)')
+            item14 = types.InlineKeyboardButton("7-Б", callback_data='7-Б(w)')
+            item15 = types.InlineKeyboardButton("8-А", callback_data='8-А(w)')
+            item16 = types.InlineKeyboardButton("8-Б", callback_data='8-Б(w)')
+            item17 = types.InlineKeyboardButton("9-А", callback_data='9-А(w)')
+            item18 = types.InlineKeyboardButton("9-Б", callback_data='9-Б(w)')
+            item19 = types.InlineKeyboardButton("10-А", callback_data='10-А(w)')
+            item20 = types.InlineKeyboardButton("10-Б", callback_data='10-Бv')
+            item21 = types.InlineKeyboardButton("11-А", callback_data='11-А(w)')
+            item22 = types.InlineKeyboardButton("11-Б", callback_data='11-Б(w)')
+
+            markup.add(item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, item16, item17, item18, item19, item20, item21, item22)
+            
+            bot.send_message(message.chat.id, "Вы перешли в режим редактирования")
+            bot.send_message(message.chat.id, "Выберите класс расписание которого вы хотите изменить", reply_markup=markup)
+
 
         else:
             bot.send_message(message.chat.id, 'Извините, меня не научили отвечать на такие сообщения.')
@@ -157,6 +188,16 @@ def callback_inline(call):
             elif call.data == '11-Б':
                 less21 = open('11-Б.txt', 'rt')
                 bot.send_message(call.message.chat.id, less21.read())
+            
+            #Нароботка, планирую изменить на какую-нибудь функцию
+            #elif call.data == '1-А(w)':
+                #f = open('1-А.txt', 'r')
+                #lines = f.readlines()
+                #lines[4] = message.text
+                #f.close()
+                #save_changes = open('1-А.txt', 'w')
+                #save_changes.writelines(lines)
+                #save_changes.close()
             
         
             
