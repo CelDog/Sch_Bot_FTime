@@ -78,6 +78,7 @@ def an(message):
         elif message.text == 'Подсказка':
             bot.send_message(message.chat.id, "Вывести содержимое файлов, Режим редактирования")
         
+        #(w) означает что файл будет открыт на запись(в возвращаемом значении не влияет не на что, сделал чтобы было проще ориентироваться)
         elif message.text == 'Режим редактирования':
             markup = types.InlineKeyboardMarkup(row_width=1)
             item1 = types.InlineKeyboardButton("1-А", callback_data='1-А(w)')
