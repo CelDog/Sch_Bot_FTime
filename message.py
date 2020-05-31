@@ -16,7 +16,7 @@ def welcome(message):
  
     markup.add(item1, item2)
  
-    bot.send_message(message.chat.id, "Добро пожаловать, {0.first_name}!\nЯ - <b>{1.first_name}</b>, бот созданный чтобы помочь тебе с расписанием.".format(message.from_user, bot.get_me()),
+    bot.send_message(message.chat.id, "Добро пожаловать, {0.first_name}!\nЯ - {1.first_name}, бот созданный чтобы помочь тебе с расписанием.".format(message.from_user, bot.get_me()),
          reply_markup=markup)
 
 
