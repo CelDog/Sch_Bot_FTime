@@ -29,7 +29,7 @@ def adminactive(message):
 def an(message):
     if message.chat.type == 'private':
  
-        if message.text == 'Расписание уроков.' or 'Вывести содержимое файлов':
+        if message.text == 'Расписание уроков.':
 
         
             markup = types.InlineKeyboardMarkup(row_width=1)
